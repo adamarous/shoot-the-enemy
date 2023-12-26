@@ -13,8 +13,8 @@ function Player:update(dt)
     self.x = self.x + self.speed * dt
   end
   
-  self.ox = (self.x + self.image:getWidth()/2) - 5
-  self.oy = (self.y + self.image:getHeight()) + 5
+  self.ox = (self.x + self.width/2) - 5
+  self.oy = (self.y + self.height) + 5
   
   Player.super.update(self, "player", dt)
 end

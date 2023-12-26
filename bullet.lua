@@ -2,15 +2,14 @@ Bullet = Entity:extend()
 
 function Bullet:new(x, y)
   Bullet.super.new(self, "bullet.png", x, y, 700)
-  self.height = self.image:getHeight()
 end
 
 function Bullet:update(dt)
-  Bullet.super.update(self, "bullet", dt)
-  
   if self.y > love.graphics.getHeight() then
     love.load()
   end
+  
+  Bullet.super.update(self, "bullet", dt)
 end
 
 function Bullet:draw()

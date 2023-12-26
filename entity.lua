@@ -6,6 +6,7 @@ function Entity:new(image, x, y, speed)
   self.y = y
   self.speed = speed
   self.width = self.image:getWidth()
+  self.height = self.image:getHeight()
 end
 
 function Entity:update(id, dt)
