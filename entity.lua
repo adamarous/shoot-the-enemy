@@ -6,6 +6,7 @@ function Entity:new(image, x, y, speed)
   self.y = y
   self.speed = speed
   self.width = self.image:getWidth()
+  self.height = self.image:getHeight()
 end
 
 function Entity:update(id, dt)
@@ -13,6 +14,7 @@ function Entity:update(id, dt)
     self.x = self.x + self.speed * dt
   elseif id == "bullet" then
     self.y = self.y + self.speed * dt
+    bulletRecordingY = self.y
   end
   
   local window_width = love.graphics.getWidth()

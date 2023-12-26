@@ -4,7 +4,6 @@ function love.conf(t)
   t.window.vsync = -1
   
   t.modules.audio = false
-  t.modules.font = false
   t.modules.joystick = false
   t.modules.math = false
   t.modules.mouse = false

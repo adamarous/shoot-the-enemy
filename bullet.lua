@@ -2,15 +2,17 @@ Bullet = Entity:extend()
 
 function Bullet:new(x, y)
   Bullet.super.new(self, "bullet.png", x, y, 700)
-  self.height = self.image:getHeight()
 end
 
 function Bullet:update(dt)
-  Bullet.super.update(self, "bullet", dt)
-  
+  if self.y == nil then
+    self.y = bulletRecordingY
+  end
   if self.y > love.graphics.getHeight() then
     love.load()
   end
+  
+  Bullet.super.update(self, "bullet", dt)
 end
 
 function Bullet:draw()
@@ -18,8 +20,12 @@ function Bullet:draw()
 end
 
 function Bullet:checkCollision(obj)
+  if self.x == nil then
+    self.x = bulletRecordingX
+  end
   local self_left = self.x
   local self_right = self.x + self.width
+  bulletRecordingX = self.x
   local self_top = self.y
   local self_bottom = self.y + self.height
   
