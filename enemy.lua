@@ -6,7 +6,7 @@ function Enemy:new()
 end
 
 function Enemy:update(dt)
-  Enemy.super.update(self, self.speed, dt, self.x)
+  Enemy.super.update(self, "enemy", dt)
 end
 
 function Enemy:draw()

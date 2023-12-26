@@ -8,16 +8,16 @@ function Entity:new(image, x, y, speed)
   self.width = self.image:getWidth()
 end
 
-function Entity:update(s, dt, x, y)
-  if x ~= nil then
+function Entity:update(id, dt)
+  if id == "enemy" then
     self.x = self.x + self.speed * dt
-  elseif y ~= nil then
+  elseif id == "bullet" then
     self.y = self.y + self.speed * dt
   end
   
   local window_width = love.graphics.getWidth()
   
-  if s ~= nil then
+  if id == "enemy" then
     if self.x < 0 then
       self.x = 0
       self.speed = -self.speed
@@ -25,7 +25,7 @@ function Entity:update(s, dt, x, y)
       self.x = window_width - self.width
       self.speed = -self.speed
     end
-  else
+  elseif id == "player" then
     if self.x < 0 then
       self.x = 0
     elseif self.x + self.width > window_width then

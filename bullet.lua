@@ -6,7 +6,7 @@ function Bullet:new(x, y)
 end
 
 function Bullet:update(dt)
-  Bullet.super.update(self, nil, dt, nil, self.y)
+  Bullet.super.update(self, "bullet", dt)
   
   if self.y > love.graphics.getHeight() then
     love.load()
