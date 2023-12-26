@@ -5,9 +5,11 @@ function Player:new()
 end
 
 function Player:update(dt)
+  -- These two if need to be separate for the player to avoid moving to the left or right when at either limit and pressing the opposing key direction
   if love.keyboard.isDown("left") then
     self.x = self.x - self.speed * dt
-  elseif love.keyboard.isDown("right") then
+  end
+  if love.keyboard.isDown("right") then
     self.x = self.x + self.speed * dt
   end
   
