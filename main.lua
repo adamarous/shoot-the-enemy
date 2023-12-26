@@ -1,6 +1,7 @@
 --[[
 TODO:
-- Changing the bullets' origin to the centre of the player's position
+- Changing the bullets' origin to the centre of the player's position (done)
+-- Changing the bullets' origin to the bottom centre of the player's position
 ]]
 
 function love.load()

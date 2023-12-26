@@ -11,6 +11,9 @@ function Player:update(dt)
     self.x = self.x + self.speed * dt
   end
   
+  self.ox = self.x + self.image:getWidth()/2
+  self.oy = self.y + self.image:getHeight()
+  
   Player.super.update(self)
 end
 
@@ -20,6 +23,6 @@ end
 
 function Player:keyPressed(key)
   if key == "space" then
-    table.insert(listOfBullets, Bullet(self.x, self.y))
+    table.insert(listOfBullets, Bullet(self.ox, self.oy))
   end
 end
