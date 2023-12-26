@@ -1,11 +1,11 @@
 --[[
 TODO:
-- Building a base class for all entities
 - Changing the bullets' origin to the centre of the player's position
 ]]
 
 function love.load()
   Object = require "classic"
+  require "entity"
   require "player"
   require "enemy"
   require "bullet"

@@ -1,11 +1,7 @@
-Player = Object:extend()
+Player = Entity:extend()
 
 function Player:new()
-  self.image = love.graphics.newImage("panda.png")
-  self.x = 300
-  self.y = 20
-  self.speed = 500
-  self.width = self.image:getWidth()
+  Player.super.new(self, "panda.png", 300, 20, 500)
 end
 
 function Player:update(dt)
@@ -15,17 +11,11 @@ function Player:update(dt)
     self.x = self.x + self.speed * dt
   end
   
-  local window_width = love.graphics.getWidth()
-  
-  if self.x < 0 then
-    self.x = 0
-  elseif self.x + self.width > window_width then
-    self.x = window_width - self.width
-  end
+  Player.super.update(self)
 end
 
 function Player:draw()
-  love.graphics.draw(self.image, self.x, self.y)
+  Player.super.draw(self)
 end
 
 function Player:keyPressed(key)
