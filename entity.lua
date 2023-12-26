@@ -12,7 +12,6 @@ end
 function Entity:update(id, dt)
   if id == "enemy" then
     self.x = self.x + self.speed * dt
-    enemyRecording = self.x
   elseif id == "bullet" then
     self.y = self.y + self.speed * dt
     bulletRecordingY = self.y
