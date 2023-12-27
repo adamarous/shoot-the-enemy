@@ -5,3 +5,7 @@ Improvements over Sheepolution's base game tutorial:
 - The bullets now shoot from the bottom centre of the player's sprite, instead of the top left corner
 - The `Player`, `Enemy` and `Bullet` classes are now part of a base class `Entity` that handles constructor, update and draw operations
 - The LOVE2D modules unused by the game have been offloaded from the executable
+
+## Credits
+
+- classic.lua by [rxi](https://github.com/rxi/classic)
